@@ -12,7 +12,7 @@
 </head>
 <body>
 
-    <div id="" class="dropdown-list">
+    <div id="normal" class="dropdown-list">
         <span class="dropdown-list-text f_med">-- Please Select Option --</span>
         <span class="btn-list">
             <span class="btn-img"></span>
@@ -30,7 +30,7 @@
 
 <script type="text/javascript" >
     // Example Normal
-    $(".dropdown-list").DDown({
+    $("#normal .dropdown-list").DDown({
         afterSelectList: function(elm,list,firstInit){
             var dataVal = list.data("val");
             console.log(dataVal); 
