@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head> 
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Orisma DDown</title>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/ddown.js"></script>
+    
+    <link rel="stylesheet" href="assets/css/ddown.css" />
+</head>
+<body>
+
+    <div id="" class="dropdown-list">
+        <span class="dropdown-list-text f_med">-- Please Select Option --</span>
+        <span class="btn-list">
+            <span class="btn-img"></span>
+        </span>
+    </div>
+    <div class="dropdown-list-data">
+            <ul class="dropdown-list-data-inner">
+                <li data-val="Value 1"><span class="list-text" >Option 1</span></li> 
+                <li data-val="Value 2"><span class="list-text" >Option 2</span></li> 
+                <li data-val="Value 3"><span class="list-text" >Option 3</span></li> 
+                <li data-val="Value 4"><span class="list-text" >Option 4</span></li> 
+                <li data-val="Value 5"><span class="list-text" >Option 5</span></li> 
+            </ul>
+    </div>
+
+<script type="text/javascript" >
+    // Example Normal
+    $(".dropdown-list").DDown({
+        afterSelectList: function(elm,list,firstInit){
+            var dataVal = list.data("val");
+            console.log(dataVal); 
+        }
+    });
+</script>   
+</body>
+</html>
