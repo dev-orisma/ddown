@@ -1,0 +1,21 @@
+{
+  "name": "ddown",
+  "homepage": "https://github.com/dev-orisma/ddown",
+  "authors": [
+    "Auttaporn Feungngern <auttaporn@orisma.com>"
+  ],
+  "description": "DDown is Drop dowe list",
+  "main": "assets/js/ddown.js",
+  "keywords": [
+    "ddown"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
