@@ -59,8 +59,7 @@
                         $('.dropdown-list-data,.dropdown-list-data-service').hide();
                     } 
 			       	$('.dropdown-list').removeClass("active-list");
-			    }
-                
+			    } 
                 if ( !$('.dropdown-list-data').is(':visible') ) {
                     $(document).unbind("keypress",_this.searchEvent);  
                 }
@@ -69,36 +68,22 @@
         }
         _this.elementClick = function() {
         	var _this = this; 
-			_this.$el.click(function(){
-                
-                if ( $('.dropdown-list-data').is(':visible') ){
-                    $('.dropdown-list-data,.dropdown-list-data-service').hide();
-                }
-                $('.dropdown-list').removeClass("active-list");
-                
-                if ( !$('.dropdown-list-data').is(':visible') ) {
-                    $(document).unbind("keypress",_this.searchEvent);  
-                }
-
-
-				var nowElm = $(this);
-				_this.$el.next(".dropdown-list-data").not(nowElm.next()).hide();
-
-		        if(!nowElm.next().is(":visible")){
-					nowElm.next().show();
-					_this.$el.addClass("active-list");
-				}else{
-					nowElm.next().hide();
-					_this.$el.removeClass("active-list");
-				}
-
-                $(document).bind("keypress",_this.searchEvent);
-               
-				_this.settings["afterClickDropdown"](_this.$el); 
-                
-			}); 
-			_this.listClick(); 
-			_this.hideDropdown();
+            _this.$el.click(function(){
+                            var nowElm = $(this);   
+                           $(".dropdown-list-data").not(nowElm.next(".dropdown-list-data")).hide();  
+                            if(!nowElm.next(".dropdown-list-data").is(":visible")){
+                                nowElm.next(".dropdown-list-data").show();
+                                _this.$el.addClass("active-list");
+                                $(document).bind("keypress",_this.searchEvent);
+                            }else{
+                                nowElm.next(".dropdown-list-data").hide();
+                                _this.$el.removeClass("active-list");
+                                 $(document).unbind("keypress",_this.searchEvent);  
+                            } 
+                            _this.settings["afterClickDropdown"](_this.$el);  
+            }); 
+            _this.listClick(); 
+            _this.hideDropdown();
 		}
   
         _this.init = function(){
